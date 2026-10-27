@@ -109,6 +109,21 @@ The DirectX 12 shots of the same scene had dimmer SDR highlights than the Direct
 stretch above the knee (0.6) is quadratic and only climbs steeply near SDR white. Not looked into
 further.
 
+### Highlights start at (slider, default 50%)
+
+The stretch used to start at a fixed 0.6 of SDR white in linear light (79% as encoded). Both
+games keep many highlights below that (Remastered's title-screen sun and sea glare at 80%,
+LiS 2's snow at 85%), so they barely brightened. The HDR tab now has a "Highlights start at"
+slider (40-90% of SDR white as encoded; the shader's knee is that share decoded with gamma 2.2),
+ini key HdrHighlightStart. Below it the picture is exactly as graded; above it the same quadratic
+rise lands SDR white on the peak.
+
+At peak 3700 and paper white 250 (SDR level -> nits): 50% 54 (unchanged), 60% 90, 70% 212,
+80% 595, 85% 980, 90% 1571, 95% 2445, 100% 3700. The old start gave 153 at 80% and 228 at 85%.
+User test on the Remastered title screen (2026-10-27): 40% "much brighter": it also lifts the
+bright mid-tones (a 70% sky 2.8x), drifting from the grade; 50% was chosen as the default. UI is
+excluded before the stretch, so menus stay at paper white at any setting.
+
 ## Preset costs
 
 Measure preset costs (2026-10-27 18:25, RTX 5080, 4K at 133% resolution, DirectX 11, one scene,
@@ -121,5 +136,4 @@ bounds. Every preset value was taken (applied 15, failed 0).
 - Per-option costs; an uncapped measurement; a visual check of the 20x LOD scale and 10x draw
   distance (Cinematic was switched on briefly, no problems reported).
 - Why the DirectX 12 picture's highlights are dimmer than DirectX 11's (an SDR shot on DX12 would
-  tell); whether the highlight stretch should start lower or rise faster.
-- The UI split for LiSRemasteredTweaks (UE 4.23, DirectX 12): needs its own draw log.
+  tell).

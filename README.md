@@ -1,4 +1,4 @@
-# LiS2Tweaks 0.1.0
+# LiS2Tweaks 0.2.0
 
 Graphics add-on for **Life is Strange 2** (PC, Steam), for ReShade with add-on support. Raises the
 game's lighting, shadow and detail settings beyond what its menu offers and adds HDR output that
@@ -6,10 +6,11 @@ keeps the game's colour grade, live, from an in-game overlay.
 
 - **HDR**: the game's menu has no HDR option. The HDR tab turns the finished picture into HDR10,
   keeping Dontnod's colours and stretching only the brightest parts, with **Peak brightness** and
-  **Paper white** sliders (and a button that uses the peak Windows reports for your display).
-  Menus, prompts and subtitles stay at paper white: the add-on copies the picture just before the
-  game draws its UI and doesn't brighten what the UI covers. Windows HDR must be on. Tested on
-  DirectX 11 (the game's default) and with `-dx12`.
+  **Paper white** sliders (and a button that uses the peak Windows reports for your display), and
+  **Highlights start at**: below that share of SDR white the picture stays as graded (default 50%;
+  lower is punchier). Menus, prompts and subtitles stay at paper white: the add-on copies the
+  picture just before the game draws its UI and doesn't brighten what the UI covers. Windows HDR
+  must be on. Tested on DirectX 11 (the game's default) and with `-dx12`.
 - **Lighting**: Cinematic screen-space reflections (also on rougher surfaces), finer volumetric
   fog, finer lighting on translucent effects.
 - **Shadows**: 4096 / 8192 shadow maps, longer shadow distance, full-resolution character shadows.
