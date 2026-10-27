@@ -1,4 +1,4 @@
-# LiS2Tweaks 0.2.0
+# LiS2Tweaks 1.0.0
 
 Graphics add-on for **Life is Strange 2** (PC, Steam), for ReShade with add-on support. Raises the
 game's lighting, shadow and detail settings beyond what its menu offers and adds HDR output that
